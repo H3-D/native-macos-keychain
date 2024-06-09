@@ -1,0 +1,35 @@
+{
+  "name": "@h3-d/native-ext-macos-keychain",
+  "version": "1.0.0",
+  "description": "Node library for MacOS native keychain access",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm run build-ts",
+    "build-ts" : "npx tsc --listEmittedFiles --project tsconfig.json",
+    "build-native" : "npm run build-setup && npm run build-ARM64 && npm run build-X86_64 && npm run build-cleanup",
+    "build-setup" : "cp ./src-native/binding.gyp . && mkdir -p ./lib/arm64 && mkdir -p ./lib/x86_64",
+    "build-ARM64" : "npm run build-ARM64-gyp-configure && npm run build-ARM64-gyp-build && npm run build-ARM64-copy",
+    "build-ARM64-gyp-configure": "npx node-gyp --arc=arm64 configure",
+    "build-ARM64-gyp-build": "npx node-gyp --arc=arm64 build",
+    "build-ARM64-copy": "cp ./build/Release/native-macos-keychain.node ./lib/arm64",
+
+    "build-X86_64" : "npm run build-X86_64-gyp-configure && npm run build-X86_64-gyp-build && npm run build-X86_64-copy",
+    "build-X86_64-gyp-configure": "npx node-gyp --arc=x86_64 configure",
+    "build-X86_64-gyp-build": "npx node-gyp --arc=x86_64 build",
+    "build-X86_64-copy": "cp ./build/Release/native-macos-keychain.node ./lib/x86_64",
+
+    "build-cleanup": "rm ./binding.gyp",
+
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "h3.d@icloud.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "bindings": "^1.5.0",
+    "node-addon-api": "^8.0.0",
+    "node-gyp": "^10.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

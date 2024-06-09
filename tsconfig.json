@@ -1,0 +1,10 @@
+{
+  "extends" : "@tsconfig/node20",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "outDir": "./dist",
+    "declaration": true
+  },
+  "include": [ "src/**/*" ],
+  "exclude": [ "node_modules" ]
+}
