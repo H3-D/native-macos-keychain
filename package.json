@@ -1,11 +1,17 @@
 {
   "name": "@h3-d/native-ext-macos-keychain",
   "version": "0.0.1",
-  "description": "Node library for MacOS native keychain access",
+  "description": "Node library addon for MacOS native keychain access. Requires MacOS Version 12+.",
   "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "os": [ "darwin" ],
   "homepage": "https://github.com/H3-D/native-macos-keychain",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H3-D/native-macos-keychain.git"
+  },
+  "private": false,
   "bugs": {
     "email": "h3.d@icloud.com"
   },
