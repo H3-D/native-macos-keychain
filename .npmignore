@@ -1,7 +1,11 @@
+.DS_Store
 .vscode
 .git
 .gypi
 build
 node_modules
 package-lock.json
-test.*
+test*.*
+tsconfig.json
+src
+src-native

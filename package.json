@@ -1,8 +1,19 @@
 {
   "name": "@h3-d/native-ext-macos-keychain",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Node library for MacOS native keychain access",
-  "main": "dist/index.js",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "homepage": "https://github.com/H3-D/native-macos-keychain",
+  "bugs": {
+    "email": "h3.d@icloud.com"
+  },
+  "author" : {
+    "name" : "H3-D",
+    "email" : "h3.d@icloud.com",
+    "url" : "https://www.h3digitalart.com/"
+  },
   "scripts": {
     "build": "npm run build-ts",
     "build-ts" : "npx tsc --listEmittedFiles --project tsconfig.json",
@@ -20,10 +31,8 @@
 
     "build-cleanup": "rm ./binding.gyp",
 
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\""
   },
-  "author": "h3.d@icloud.com",
-  "license": "MIT",
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
     "bindings": "^1.5.0",
